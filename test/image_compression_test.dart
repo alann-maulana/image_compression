@@ -3,8 +3,18 @@ import 'dart:io';
 import 'package:test/test.dart';
 import 'package:image_compression/image_compression.dart';
 
-void main() {
-  final file = File('/path/to/image/file.jpg');
+void main() async {
+  final url = 'https://i.ibb.co/FbzvZWs/BLEvsNFC.jpg';
+  final file = File('BLEvsNFC.jpg');
+  if (!file.existsSync()) {
+    print('Downloading file..');
+    final request = await HttpClient().getUrl(Uri.parse(url));
+    print('Getting response..');
+    final response = await request.close();
+    print('Writing to file..');
+    await response.pipe(file.openWrite());
+    print('Starting tests..');
+  }
 
   test('Compressing image synchronously', () {
     final input = ImageFile(
