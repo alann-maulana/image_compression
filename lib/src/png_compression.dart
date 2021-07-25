@@ -1,8 +1,4 @@
-const int DEFAULT_COMPRESSION = 6;
-const int BEST_COMPRESSION = 9;
-const int BEST_SPEED = 1;
-const int NO_COMPRESSION = 0;
-
+/// The PNG compression level
 enum PngCompression {
   defaultCompression,
   bestCompression,
@@ -11,16 +7,17 @@ enum PngCompression {
 }
 
 extension PngCompressionExtension on PngCompression {
+  /// The level of PNG compression
   int get level {
     switch (this) {
-      case PngCompression.defaultCompression:
-        return DEFAULT_COMPRESSION;
       case PngCompression.bestCompression:
-        return BEST_COMPRESSION;
+        return 9;
+      case PngCompression.defaultCompression:
+        return 6;
       case PngCompression.bestSpeed:
-        return BEST_SPEED;
+        return 1;
       case PngCompression.noCompression:
-        return NO_COMPRESSION;
+        return 0;
     }
   }
 }
