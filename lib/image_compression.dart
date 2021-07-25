@@ -8,6 +8,7 @@ import 'package:image/image.dart' as img;
 
 import 'src/configuration.dart';
 import 'src/image_file.dart';
+import 'src/png_compression.dart';
 
 export 'src/configuration.dart';
 export 'src/image_file.dart';
