@@ -40,7 +40,12 @@ ImageFile compress(ImageFileConfiguration param) {
         break;
     }
 
-    input.rawBytes = Uint8List.fromList(output);
+    return ImageFile(
+      filePath: '',
+      rawBytes: Uint8List.fromList(output),
+      width: image.width,
+      height: image.height,
+    );
   } else {
     final animation = img.decodeAnimation(input.rawBytes);
     if (animation != null) {
@@ -50,7 +55,12 @@ ImageFile compress(ImageFileConfiguration param) {
       );
 
       if (output != null) {
-        input.rawBytes = Uint8List.fromList(output);
+        return ImageFile(
+          filePath: '',
+          rawBytes: Uint8List.fromList(output),
+          width: animation.width,
+          height: animation.height,
+        );
       }
     }
   }
