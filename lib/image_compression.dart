@@ -13,6 +13,7 @@ export 'image_compression_html.dart'
     if (dart.library.io) 'image_compression_io.dart';
 export 'src/configuration.dart';
 export 'src/image_file.dart';
+export 'src/png_compression.dart';
 
 /// Compress image file input synchronously
 ///
