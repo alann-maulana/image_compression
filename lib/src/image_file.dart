@@ -8,19 +8,46 @@ import 'package:mime/mime.dart' as mime;
 import 'package:path/path.dart' as path;
 
 import 'configuration.dart';
+import 'image_size_data.dart';
 
 /// The image file input for compressing
 class ImageFile {
   /// The path of image file
-  String filePath;
+  final String filePath;
 
   /// The raw bytes of image file
-  Uint8List rawBytes;
+  final Uint8List rawBytes;
+
+  String? _contentType;
+  int? _width;
+  int? _height;
 
   ImageFile({
     required this.filePath,
     required this.rawBytes,
-  });
+    String? contentType,
+    int? width,
+    int? height,
+  })  : _contentType = contentType,
+        _width = width,
+        _height = height {
+    if (width == null && height == null) {
+      ImageSizeData? imageSizeData;
+      try {
+        imageSizeData = ImageSizeData.fromBytes(rawBytes);
+      } catch (_) {}
+
+      _width = imageSizeData?.width;
+      _height = imageSizeData?.height;
+    }
+
+    if (contentType == null) {
+      _contentType = mime.lookupMimeType(
+        filePath,
+        headerBytes: List.from(rawBytes),
+      );
+    }
+  }
 
   /// The size of image file input in bytes
   int get sizeInBytes => rawBytes.lengthInBytes;
@@ -32,12 +59,13 @@ class ImageFile {
   String get extension => path.extension(filePath);
 
   /// Return the content type of image file input if any
-  String? get contentType {
-    return mime.lookupMimeType(
-      filePath,
-      headerBytes: List.from(rawBytes),
-    );
-  }
+  String? get contentType => _contentType;
+
+  /// Return the size of width from image
+  int? get width => _width;
+
+  /// Return the size of height from image
+  int? get height => _height;
 
   /// Compress image file input synchronously
   ///
