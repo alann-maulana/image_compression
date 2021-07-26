@@ -1,3 +1,4 @@
+/// Library image compression
 library image_compression;
 
 import 'dart:typed_data';
