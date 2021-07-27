@@ -1,3 +1,6 @@
+## 1.0.3
+* Update add image resolution width and height params.
+
 ## 1.0.2
 * Fix PngCompression not exported.
 
