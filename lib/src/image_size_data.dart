@@ -22,6 +22,8 @@ enum ImageFormat {
 
 /// Provides details about image format information for raw compressed bytes
 /// of an image.
+///
+/// Ref: https://gist.github.com/dnfield/ed17cfc37a1f8fabad13431329328246
 abstract class ImageSizeData {
   /// Allows subclasses to be const.
   const ImageSizeData({
