@@ -1,13 +1,13 @@
 name: image_compression
 description: A Dart Extension for image package to compress and resize the images.
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/eyro-labs/image_compression
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  image: ^3.0.2
+  image: ^4.0.16
   mime: ^1.0.0
   path: ^1.8.0
 

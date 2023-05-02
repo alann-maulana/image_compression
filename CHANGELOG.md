@@ -1,3 +1,6 @@
+## 1.0.4
+* Update `image` dependency and sdk version
+
 ## 1.0.3
 * Update add image resolution width and height params.
 

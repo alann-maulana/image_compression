@@ -1,8 +1,7 @@
 import 'dart:io';
 
-import 'package:image_compression/src/png_compression.dart';
-import 'package:test/test.dart';
 import 'package:image_compression/image_compression.dart';
+import 'package:test/test.dart';
 
 void main() async {
   final url = 'https://i.ibb.co/FbzvZWs/BLEvsNFC.jpg';

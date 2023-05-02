@@ -1,23 +1,12 @@
 /// The PNG compression level
 enum PngCompression {
-  defaultCompression,
-  bestCompression,
-  bestSpeed,
-  noCompression
-}
+  defaultCompression(6),
+  bestCompression(9),
+  bestSpeed(1),
+  noCompression(0);
 
-extension PngCompressionExtension on PngCompression {
+  const PngCompression(this.level);
+
   /// The level of PNG compression
-  int get level {
-    switch (this) {
-      case PngCompression.bestCompression:
-        return 9;
-      case PngCompression.defaultCompression:
-        return 6;
-      case PngCompression.bestSpeed:
-        return 1;
-      case PngCompression.noCompression:
-        return 0;
-    }
-  }
+  final int level;
 }

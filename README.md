@@ -2,6 +2,8 @@
 
 A Dart Extension for image package to compress and resize the images.
 
+If you want to build for Flutter, use [image_compression_flutter](https://pub.dev/packages/image_compression_flutter) package. It support native compression and WEBP format conversion (`Android` & `iOS` only).
+
 ## Sync Compression
 
 ```dart

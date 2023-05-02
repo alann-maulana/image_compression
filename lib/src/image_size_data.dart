@@ -30,7 +30,7 @@ abstract class ImageSizeData {
     required this.format,
     required this.width,
     required this.height,
-  })   : assert(width >= 0),
+  })  : assert(width >= 0),
         assert(height >= 0);
 
   /// Creates an appropriate [ImageSizeData] for the source `bytes`, if possible.

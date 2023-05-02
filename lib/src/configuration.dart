@@ -19,8 +19,8 @@ class Configuration {
   final OutputType outputType;
 
   const Configuration({
-    this.pngCompression: PngCompression.defaultCompression,
-    this.jpgQuality: 80,
+    this.pngCompression = PngCompression.defaultCompression,
+    this.jpgQuality = 80,
     this.animationGifSamplingFactor = 30,
     this.outputType = OutputType.jpg,
   }) : assert(jpgQuality > 0 && jpgQuality <= 100);
