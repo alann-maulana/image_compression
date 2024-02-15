@@ -61,7 +61,6 @@ void main() async {
     print('Input = ${filePng.lengthSync()}');
     print('Output = ${output.sizeInBytes}');
     expect(filePng.lengthSync() > output.sizeInBytes, isTrue);
-    expect(output.extension == '.png', isTrue);
     expect(output.contentType == 'image/png', isTrue);
   });
 

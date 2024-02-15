@@ -1,3 +1,7 @@
+## 1.0.5
+* Update sdk version
+* Fix unit testing
+
 ## 1.0.4
 * Update `image` dependency and sdk version
 
